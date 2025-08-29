@@ -1,5 +1,5 @@
-import express, { Request, Response } from 'express';
-import { MessageResponse } from '../types/Messages';
+import express, {Request, Response} from 'express';
+import {MessageResponse} from '../types/Messages';
 import categoryRoute from './routes/categoryRoute';
 import speciesRoute from './routes/speciesRoute';
 import animalRoute from './routes/animalRoute';

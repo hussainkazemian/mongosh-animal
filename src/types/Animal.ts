@@ -1,10 +1,16 @@
-import types from 'mongoose';
-import { Point } from 'geojson';
+import {Point} from 'geojson';
+import {Types, Model} from 'mongoose';
+import {Species} from './Species';
 
 type Animal = {
   animal_name: string;
   birthdate: Date;
-  species: types.ObjectId;
+  species: Types.ObjectId | Species;
   location: Point;
-}
-export { Animal };
+};
+
+type AnimalModel = Model<Animal> & {
+  findBySpecies: (species: string) => Promise<Animal[]>;
+};
+
+export {Animal, AnimalModel};
